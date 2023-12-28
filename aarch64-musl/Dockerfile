@@ -13,6 +13,7 @@ RUN apk update && \
     zip \
     unzip \
     openssl \
+    aws-cli \
     build-base \
     && rm -rf /var/cache/apk/*
 
@@ -33,4 +34,4 @@ VOLUME ["/pnpm-store"]
 FROM deps_node as deps_rust
 
 RUN curl https://sh.rustup.rs -sSf | bash -s -- -y
-ENV PATH="/home/node/.cargo/bin:${PATH}"
+ENV PATH="/root/.cargo/bin:${PATH}"
