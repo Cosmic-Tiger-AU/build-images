@@ -1,4 +1,4 @@
-FROM alpine:3.19 as base
+FROM --platform=linux/arm64 alpine:3.19 as base
 
 RUN apk update && apk upgrade
 
